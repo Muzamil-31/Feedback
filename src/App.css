@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #21302d;
+  background: #f3f7f5;
+  font-synthesis: none;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page-shell {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 64px 24px 72px;
+}
+
+.page-header {
+  margin-bottom: 32px;
+}
+
+.record-label {
+  margin: 0 0 8px;
+  color: #2b8973;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  color: #162b26;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  letter-spacing: -0.06em;
+  line-height: 1.05;
+}
+
+h2 {
+  color: #183b32;
+  font-size: 1.45rem;
+  letter-spacing: -0.03em;
+}
+
+
+.card {
+  background: #fff;
+  border: 1px solid #dce9e4;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(36, 71, 61, 0.06);
+  padding: 28px;
+}
+
+.form-card {
+  border-top: 4px solid #48aa8d;
+  margin-bottom: 24px;
+}
+
+.card-heading {
+  margin-bottom: 24px;
+}
+
+.rating-label {
+  color: #40534e;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 9px;
+}
+
+textarea {
+  border: 1px solid #cbdcd6;
+  border-radius: 12px;
+  color: #21302d;
+  display: block;
+  font-size: 1rem;
+  outline: none;
+  padding: 14px 16px;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+textarea:focus {
+  border-color: #48aa8d;
+  box-shadow: 0 0 0 4px rgba(72, 170, 141, 0.12);
+}
+
+textarea::placeholder {
+  color: #9aaba5;
+}
+
+.form-controls {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.rating-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.rating-option {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating-option input {
+  position: absolute;
+  opacity: 0;
+  
+  pointer-events: none;
+}
+
+.rating-option span {
+  align-items: center;
+  border: 1px solid #cbdcd6;
+  border-radius: 6px;
+  color: #536862;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  transition: all 0.2s;
+  width: 30px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.rating-option input:checked + span {
+  background: #237b65;
+  border-color: #237b65;
+  color: #fff;
+}
+
+.rating-option input:focus-visible + span,
+.text-button:focus-visible,
+.primary-button:focus-visible {
+  outline: 3px solid rgba(72, 170, 141, 0.35);
+  outline-offset: 2px;
+}
+
+.primary-button {
+  background: #237b65;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  min-width: 105px;
+  padding: 12px 20px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.primary-button:hover {
+  background: #1b644f;
+  transform: translateY(-1px);
+}
+
+.form-error {
+  color: #ba4a42;
+  font-size: 0.88rem;
+  margin: 16px 0 0;
+}
+
+.empty-state {
+  background: #f7faf9;
+  border: 1px dashed #cbdcd6;
+  border-radius: 14px;
+  color: #536862;
+  font-weight: 700;
+  padding: 26px 20px;
+  text-align: center;
+}
+
+.empty-state p {
+  margin: 0;
+}
+
+.records-list {
+  display: grid;
+  gap: 12px;
+}
+
+.record {
+  align-items: flex-start;
+  background: #f7faf9;
+  border: 1px solid #e2eeea;
+  border-radius: 14px;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 18px;
+}
+
+.record-label {
+  color: #82948e;
+  font-size: 0.68rem;
+  margin-bottom: 5px;
+}
+
+.record-content {
+  display: grid;
+  flex: 1;
+  grid-template-columns: minmax(0, auto) auto;
+  column-gap: 24px;
+  align-items: center;
+  justify-content: start;
+}
+
+.record-text {
+  color: #2d413b;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.record-rating {
+  color: #667873;
+  font-size: 0.9rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.record-rating strong {
+  color: #237b65;
+}
+
+.record-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+.text-button {
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 5px 7px;
+}
+
+.edit-button {
+  color: #237b65;
+}
+
+.delete-button {
+  color: #ba4a42;
+}
+
+.text-button:hover {
+  background: #e8f5ef;
+}
+
+.delete-button:hover {
+  background: #fff0ee;
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    padding: 40px 16px 48px;
+  }
+
+  .card {
+    padding: 22px 18px;
+  }
+
+  .form-controls {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .primary-button {
+    width: 100%;
+  }
+
+  .record {
+    flex-direction: column;
+  }
+
+  .record-content {
+    width: 100%;
+  }
+
+  .record-actions {
+    align-self: flex-end;
+  }
+}
